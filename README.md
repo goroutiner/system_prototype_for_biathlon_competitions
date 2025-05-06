@@ -3,6 +3,7 @@
 The prototype must be able to work with a configuration file and a set of external events of a certain format.
 Solution should contain golang (1.20 or newer) source file/files and unit tests (optional)
 
+---
 ## Configuration (json)
 
 - **Laps** - Amount of laps for main distance
@@ -12,7 +13,9 @@ Solution should contain golang (1.20 or newer) source file/files and unit tests 
 - **Start** - Planned start time for the first competitor
 - **StartDelta** - Planned interval between starts
 
+---
 ## Events
+
 
 All events are characterized by time and event identifier. Outgoing events are events created during program operation. Events related to the "incoming" category cannot be generated and are output in the same form as they were submitted in the input file.
 
@@ -49,6 +52,7 @@ EventID | extraParams | Comments
 33      |             | The competitor has finished
 ```
 
+---
 ## Final report
 
 The final report should contain the list of all registered competitors
@@ -121,3 +125,26 @@ Examples:
 [NotFinished] 1 [{00:29:03.872, 2.093}, {,}] {00:01:44.296, 0.481} 4/5
 ```
 
+---
+## Launch Instructions
+
+1. Clone the repository:
+```sh
+git clone https://github.com/goroutiner/system_prototype_for_biathlon_competitions.git
+cd system_prototype_for_biathlon_competitions
+```
+
+2. To start the service, run the command:
+```sh
+make run
+```
+
+3. After launching, a report file named `report` will be created in the root of the project.
+
+---
+## Instructions for running unit-tests
+
+- Make sure that you are at the root of the project and run the command:
+```sh
+make unit-tests
+```
